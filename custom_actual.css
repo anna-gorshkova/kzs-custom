@@ -5,6 +5,8 @@
     --clr-warning: #FCFF28;
     --clr-defect: #FF83FF;
     --clr-danger: #FF0007;
+
+    --clr-hover: #176494;
 }
 
 /* Buttons on the plans */
@@ -389,3 +391,190 @@ padding: 0px;
 .system_message_counter.system_message_counter_warning .component-label-container::after {
    background-color: var(--clr-warning);
 }
+
+
+
+/*** SMIS: styles for icon of systems ***/
+
+.kzs-system-icon {
+    --hsl-hover: 60%;
+    width: auto !important;
+    height: auto !important;
+    background: none !important;
+}
+
+.kzs-system-icon .button-image-container {
+	width: 45px;
+	height: 45px;
+	margin-right: 0px;
+}
+
+.kzs-system-icon .button-image-element {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.kzs-system-icon button.agg-btn.medium {
+   
+    min-width: 58px;
+    height: 58px;
+    padding: 0px;
+    border-radius: 50%;
+    transition: all 200ms;
+
+    background-color: var(--clr-normal);
+    transition: all 300ms ease-out;
+}
+
+.kzs-system-icon:hover button.agg-btn.medium {
+    background-color: var(--clr-hover);
+}
+
+.kzs-system-icon button.agg-btn.medium svg path {
+    transition: all 300ms ease-out;
+}
+
+.kzs-system-icon:hover button.agg-btn.medium svg path {
+    fill: #E9E9E9;
+}
+
+
+.kzs-system-icon.kzs-system-icon_danger button.agg-btn.medium {
+    background-color: var(--clr-danger);
+}
+
+.kzs-system-icon.kzs-system-icon_no_connect button.agg-btn.medium {
+    background-color: var(--clr-no-connect);
+}
+
+.kzs-system-icon.kzs-system-icon_defect button.agg-btn.medium {
+    background-color: var(--clr-defect);
+}
+
+.kzs-system-icon.kzs-system-icon_warning button.agg-btn.medium {
+    background-color: var(--clr-warning);
+}
+
+
+
+.kzs-system-icon::before,
+.kzs-system-icon::after {
+    --scale: 0;
+    --tooltip-color: var(--clr-hover);
+
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateX(8px) translateY(-50%) scale(var(--scale));
+
+    transition: 180ms transform linear;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.kzs-system-icon:hover::before,
+.kzs-system-icon:hover::after {
+    --scale: 1;
+}
+
+.kzs-system-icon::before {
+    content: '';
+
+    width: max-content;
+    max-width: 210px;
+    padding: 10px;
+
+    background-color: var(--tooltip-color);
+
+    font-size: 12px;
+    line-height: 1.7;
+    color: #E9E9E9;
+    text-align: center;
+    font-family: sans-serif;
+    text-transform: uppercase;
+
+    border-radius: 8px;
+    transform-origin: left center;
+    --translate: calc(100% - 4px);
+}
+
+#button_vert_transport.kzs-system-icon::before {
+   content: 'СИСТЕМА ВЕРТИКАЛЬНОГО ТРАНСПОРТА';
+}
+
+#button_ventilation.kzs-system-icon::before {
+    content: 'ОБЩЕОБМЕННАЯ ВЕНТИЛЯЦИЯ';
+ }
+
+ #button_electric_equipment.kzs-system-icon::before {
+    content: 'ВНУТРЕННЕЕ ЭЛЕКТРООБОРУДОВАНИЕ';
+ }
+
+ #button_electric_lightning.kzs-system-icon::before {
+    content: 'ЭЛЕКТРООСВЕЩЕНИЕ';
+ }
+
+ #button_water_supply.kzs-system-icon::before {
+    content: 'ВОДОСНАБЖЕНИЕ И ВОДООТВЕДЕНИЕ';
+ }
+
+ #button_warm_supply.kzs-system-icon::before {
+    content: 'СИСТЕМА ОТОПЛЕНИЯ И ТЕПЛОСНАБЖЕНИЯ';
+ }
+
+ #button_cold_supply.kzs-system-icon::before {
+    content: 'ХОЛОДОСНАБЖЕНИЕ';
+ }
+
+ #button_gas_contamination.kzs-system-icon::before {
+    content: 'СИСТЕМА КОНТРОЛЯ ЗАГАЗОВАННОСТИ';
+ }
+
+ #button_rasco.kzs-system-icon::before {
+    content: 'РАСЦО';
+ }
+
+ #button_smik.kzs-system-icon::before {
+    content: 'СМИК';
+ }
+
+ #button_prhk.kzs-system-icon::before {
+    content: 'ПРХК';
+ }
+
+ #button_suks.kzs-system-icon::before {
+    content: 'СУКС';
+ }
+
+ #button_lvs.kzs-system-icon::before {
+    content: 'ЛОКАЛЬНЫЕ ВЫЧИСЛИТЕЛЬНЫЕ СЕТИ';
+ }
+
+ #button_sos.kzs-system-icon::before {
+    content: 'СИСТЕМА ОХРАННОЙ СИГНАЛИЗАЦИИ';
+ }
+
+ #button_skud.kzs-system-icon::before {
+    content: 'СИСТЕМА КОНТРОЛЯ И УПРАВЛЕНИЯ ДОСТУПОМ (СКУД)';
+ }
+
+ #button_soue.kzs-system-icon::before {
+    content: 'ПРОТИВОПОЖАРНАЯ СИСТЕМА ОПОВЕЩЕНИЯ И УПРАВЛЕНИЯ ЭВАКУАЦИЕЙ (СОУЭ)';
+ }
+
+ #button_aps.kzs-system-icon::before {
+    content: 'СИСТЕМА АВТОМАТИЧЕСКОЙ ПОЖАРНОЙ СИГНАЛИЗАЦИИ (АУПС)';
+ }
+
+ #button_augpt.kzs-system-icon::before {
+    content: 'СИСТЕМА АВТОМАТИЧЕСКОГО ГАЗОВОГО ПОЖАРОТУШЕНИЯ';
+ }
+
+ #button_auvpt.kzs-system-icon::before {
+    content: 'СИСТЕМА АВТОМАТИЧЕСКОГО ВОДЯНОГО ПОЖАРОТУШЕНИЯ';
+ }
+
+ #button_smoke_ventilation.kzs-system-icon::before {
+    content: 'ПРОТИВОДЫМОВАЯ ВЕНТИЛЯЦИЯ';
+ }
