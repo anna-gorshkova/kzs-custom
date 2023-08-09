@@ -1,0 +1,391 @@
+/* Colors */
+:root {
+    --clr-normal: #3399FF;
+    --clr-no-connect: #FF9517 ;
+    --clr-warning: #FCFF28;
+    --clr-defect: #FF83FF;
+    --clr-danger: #FF0007;
+}
+
+/* Buttons on the plans */
+.kzs-button_icon {
+    width: auto !important;
+    height: auto !important;
+    background: none !important;
+    border:1px solid transparent;
+    transition: all 0.3s ease-out;
+}
+.kzs-button_icon .agg-btn.main {   
+    min-width: 16px !important;
+    height: 16px !important;    
+    border-radius: 50%;    
+    padding: 0 !important;
+	background-color: #3399FF; 
+	transition: all 0.3s ease-out;
+}
+.kzs-button_icon.kzs-button_big-icon .agg-btn.main {
+    min-width: 30px !important;
+    height: 30px !important;
+}
+.kzs-button_icon:hover {   
+     border-color: #EFEFEF;
+     z-index: 20;
+}
+
+.kzs-button_icon .button-image-container {
+	width: 12px;
+	height: 12px;
+	margin-right: 0px
+}
+
+.kzs-button_icon.kzs-button_big-icon .button-image-container {
+	width: 18px;
+	height: 18px;
+}
+
+.kzs-button_icon .button-image-element {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.kzs-no-connect .agg-btn.main {
+    background-color: var(--clr-no-connect) !important;
+}
+
+.kzs-warning .agg-btn.main {
+    background-color: var(--clr-warning);
+}
+
+.kzs-defect .agg-btn.main {
+    background-color: var(--clr-defect);
+}
+
+.kzs-danger .agg-btn.main {
+    background-color: var(--clr-danger);
+}
+
+
+/* Tooltips */
+
+.kzs-button_icon::before,
+.kzs-button_icons::after {
+    --scale: 0;
+    --tooltip-color: #E9E9E9;
+
+    position: absolute;
+    top:0;
+    left: 50%;
+    transform: translateX(-50%) translateY(var(--translate-y, 0)) scale(var(--scale));
+
+    transition: 180ms transform linear;
+    z-index: 10;
+    pointer-events: none;
+}
+
+
+.kzs-button_icon:hover::before,
+.kzs-button_icon:hover::after {
+    --scale: 1;
+}
+
+.kzs-button_icon::before {
+    content: attr(data-smistooltip);
+
+    width: max-content;
+    padding: 4px 8px;
+
+    background-color: var(--tooltip-color);
+
+    font-size: 12px;
+    color: #32353D;
+    text-align: left;
+
+    border-radius: 4px;
+    transform-origin: bottom center;
+    --translate-y: calc(-100% - 4px);
+}
+
+/* Levels title */
+.kzs-level-title {
+    width: auto !important;
+    height: auto !important;
+    background: none !important;
+    top: 20px !important;
+    left: 20px !important;
+}
+
+.kzs-level-title .component-label-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #E9E9E9;
+}
+
+
+ /* Buttons in the top main menu */
+
+.kzs-button_with-icon {
+    height:auto !important;
+    width: auto !important;
+    background: none !important;
+}
+
+.kzs-button_with-icon button.agg-btn.medium {
+	min-width:95px;
+	max-width: 95px;
+	height: 139px;
+	padding: 0px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: 11px;
+	font-weight: 400;
+	text-transform: uppercase;
+	color: #fff;
+	background-color: #072640;
+	border-radius: 4px;
+	padding: 2px 0;
+	border-bottom: 4px solid #176494;
+}
+
+.kzs-button_with-icon button.agg-btn.medium:hover {
+    border-color: #179EB4;
+    background-color: #0D3752;
+}
+
+.kzs-button_with-icon .button-image-element {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 0;
+}
+
+.kzs-button_with-icon .button-image-container {
+    width: max-content;
+    height: max-content;
+    margin-bottom: 16px;
+	margin-right: 0px;
+}
+
+.kzs-button_with-icon button.agg-btn.medium span:last-child {
+    max-width: 95px;
+}
+
+
+/* Schema in structure */
+
+.kzs-scheme-button {
+    height:auto !important;
+    width: auto !important;
+    background: none !important;
+    cursor: pointer;
+    
+}
+.kzs-scheme-button .button-image-container {
+	width: 226px;
+	height: 103px;
+	margin-right: 0px
+}
+.kzs-scheme-button button.agg-btn.medium {
+min-width: 226px;
+height: 103px;
+background: none;
+padding: 0px;
+}
+.kzs-scheme-button::before {
+    content: url("data:image/svg+xml,%3Csvg width='49' height='48' viewBox='0 0 49 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='24.5' cy='24' r='23' stroke='%23EFEFEF' stroke-width='2'/%3E%3Cpath d='M30.2694 16.4413L37.6561 23.828M37.6561 23.828L30.7618 30.7223M37.6561 23.828H11.0001' stroke='%23EFEFEF' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+    position: absolute;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+    top: 0;
+    left: 0;
+    right:0;
+    bottom: 0;
+    border-radius: 6px;
+    border: 2px solid transparent;
+    pointer-events: none;
+    transition: all 200ms;
+    background: rgba(51, 153, 255, 0.6);
+    border-color: #3399FF;
+    opacity: 0;
+    transform: translateY(10px);
+    
+}
+.kzs-scheme-button:hover::before {
+ transform: translateY(0);
+ opacity: 1;
+}
+
+
+/* buttons for selecting dataloggers */
+.kzs-button-select {
+    height:auto !important;
+    width: auto !important;
+    background: none !important;
+}
+
+.kzs-button-select button.agg-btn.medium {
+
+ display: flex;
+ align-items: center;
+ justify-content: center;
+
+ height: 30px;
+ padding: 0px;
+
+ background: #072640;
+
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21px;
+    color: #E9E9E9;
+    min-width: 59px;
+    border-radius: 0px;
+    border-top: 3px solid #176494;
+
+}
+.kzs-button-select button.agg-btn.medium:hover {
+    color: #179EB4;
+    border-color: #179EB4;
+}
+
+.kzs-button-select.kzs-button-select_active button.agg-btn.medium {
+    color: #179EB4;
+    border-color: #179EB4;
+}
+.kzs-button-select.kzs-button-select_active button.agg-btn.medium:before {
+    content: '';
+    position: absolute;
+    border: 5px solid transparent;
+    border-bottom-color: #179EB4;
+    left: 50%;
+    top: 0px;
+    transform: translate(-50%, -100%);
+}
+
+/*buttons with arrow*/
+.kzs-button-round-arrow {
+    width: auto !important;
+    height: auto !important;    
+    background: none !important;
+}
+.kzs-button-round-arrow .button-image-container {
+	width: 64px;
+	height: 64px;
+	margin-right: 0px
+}
+
+.kzs-button-round-arrow .button-image-element {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 200ms;
+}
+
+.kzs-button-round-arrow button.agg-btn.medium {
+     min-width: 64px;
+     height: 64px;
+     background: transparent;
+     padding: 0px;
+    border-radius: 50%;
+    border: 2px solid #EFEFEF;
+    transition: all 200ms;
+}
+
+.kzs-button-round-arrow:hover button.agg-btn.medium {
+ background: rgba(51, 153, 255, 0.6);
+}
+
+.kzs-button-round-arrow:hover .button-image-element {
+ transform: translateX(2px);
+}
+
+
+.kzs-button-round-arrow.kzs-button-round-arrow_back:hover .button-image-element {
+ transform: translateX(-2px);
+}
+.kzs-button-round-arrow.kzs-button-round-arrow_back .button-image-container {
+	width: 32px;
+	height: 32px;
+}
+.kzs-button-round-arrow.kzs-button-round-arrow_back button.agg-btn.medium {
+     min-width: 32px;
+     height: 32px;
+    border: 1px solid #c0c0c0;
+}
+
+
+
+/* SMIS counter of messages in systems */
+
+.system_message_counter {
+    width: auto !important;
+    height: auto !important;
+    background: none !important;
+  }
+  
+/* default: normal status (blue color) */  
+.system_message_counter .component-label-container {
+    width: 152px;
+    height: 70px;
+    padding: 10px 8px;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+  
+    font-size: 40px;
+    line-height: 1;
+    color: var(--clr-normal);
+}
+  
+.system_message_counter .component-label-container::after {
+    content: '';
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background-color: var(--clr-normal);
+}
+
+/* danger status (red color) */   
+.system_message_counter.system_message_counter_danger .component-label-container {
+    color: var(--clr-danger);
+}
+.system_message_counter.system_message_counter_danger .component-label-container::after {
+    background-color: var(--clr-danger);
+}
+
+/* defect status (pink color) */    
+.system_message_counter.system_message_counter_defect .component-label-container {
+    color: var(--clr-defect);
+}  
+.system_message_counter.system_message_counter_defect .component-label-container::after {
+    background-color: var(--clr-defect);
+}
+ 
+/* no-connect status (orange color) */  
+.system_message_counter.system_message_counter_no_connect .component-label-container {
+    color: var(--clr-no-connect);
+}
+.system_message_counter.system_message_counter_no_connect .component-label-container::after {
+   background-color: var(--clr-no-connect);
+}
+
+/* warning status (yellow color) */
+.system_message_counter.system_message_counter_warning .component-label-container {
+    color: var(--clr-warning);
+}
+.system_message_counter.system_message_counter_warning .component-label-container::after {
+   background-color: var(--clr-warning);
+}
